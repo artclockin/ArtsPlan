@@ -99,11 +99,12 @@ func multiply(num1 string, num2 string) string {
 
 
 ## 3.Tips
-Golang中 int转string，调研一下主要有三种方法
+Golang中 int转string，主要有三种方法:
+```
 a. strconv.Itoa, str := strconv.Itoa(i)
 b. strconv.FormatInt, str := strconv.FormatInt(i, 10)
 c. fmt.Sprintf,  str := fmt.Sprintf("%d", i)
-
+```
 a和b是等效的，c方法性能略低，建议使用a.
 
 看下简化后源码：
