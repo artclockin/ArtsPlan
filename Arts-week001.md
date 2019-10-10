@@ -27,7 +27,7 @@ Output: "56088"
 3. Both `num1` and `num2` do not contain any leading zero, except the number 0 itself.
 4. You **must not use any built-in BigInteger library** or **convert the inputs to integer** directly.
 
-**My Solution**
+**My Solution:**
 
 ```
 func multiply(num1 string, num2 string) string {
@@ -104,7 +104,8 @@ a. strconv.Itoa, str := strconv.Itoa(i)
 b. strconv.FormatInt, str := strconv.FormatInt(i, 10)
 c. fmt.Sprintf,  str := fmt.Sprintf("%d", i)
 
-a和b是等效的，c方法性能略低，建议使用a
+a和b是等效的，c方法性能略低，建议使用a.
+
 看下简化后源码：
 ```
 Itoa和FormatInt方法位于strconv/itoa.go
