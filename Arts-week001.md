@@ -108,9 +108,9 @@ c. fmt.Sprintf,  str := fmt.Sprintf("%d", i)
 a和b是等效的，c方法性能略低，建议使用a.
 
 看下简化后源码：
-```
-Itoa和FormatInt方法位于strconv/itoa.go
 
+Itoa和FormatInt方法位于strconv/itoa.go
+```
 const digits = "0123456789abcdefghijklmnopqrstuvwxyz"
 const smallsString = "00010203040506070809" +
     "10111213141516171819" +
