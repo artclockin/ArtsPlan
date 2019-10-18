@@ -217,6 +217,27 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 
 
 
+
+
 ## 4.Share
+
+[How to Be a Good Senior Developer](https://levelup.gitconnected.com/how-to-be-a-good-senior-developer-958948e02ada) - It’s not what you do—it’s how you do it
+
+**Commit mistake, correct mistake, learn from mistake, share mistake—repeat.**
+犯错误，改正错误，从错误中学习，分享错误，重复。
+
+**A senior developer is a person who can bring in 10x more value to the company. These are developers who know how “good stuff” works and can deliver value to the customer.**
+高级开发人员是指能够为公司带来10倍以上价值的人。这些开发人员知道“好东西”是如何工作的，能够为客户提供价值。
+
+**高级开发人员特质：**
+
+- They’re Curious 好奇心
+- They Learn Their Chosen Platform Inside Out 从内而外地学习
+- They’re Great Mentors 他们是伟大的导师
+- They Don’t Have “Shiny-Toy” Syndrome 他们没有“发光玩具”综合症（他们确切地知道什么时候不做某事）
+- They Admit What They Don’t Know 承认自己不知道的
+- They Can Detect the Smell of Bad Code 他们可以检测到错误代码的气味
+
+
 
 
