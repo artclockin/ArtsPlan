@@ -210,11 +210,123 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 
 ## 2.Review
 
+[Machine Translation: A Short Overview](https://towardsdatascience.com/machine-translation-a-short-overview-91343ff39c9f)
+**本文列举了机器翻译的3个阶段：**
+
+- 基于规则的机器翻译 (RBMT): 1970s-1990s
+  - 优点：
+    - 不需要双语文本
+    - 领域无关
+    - 完全控制（每种情况下都可能有新规则对应）
+    - 可重用性（当与新语言配对时，语言的现有规则可以被转移）
+  - 缺点：
+    - 需要好的字典
+    - 手动设置规则（需要专业知识）
+    - 规则越多，系统处理就越困难
+- 基于统计学的机器翻译(SMT): 1990s-2010s
+  - 优点：
+    - 语言专家手工工作较少
+    - 适合许多语言词对场景(基于Bayes统计)
+    - 减少字典外翻译，使用合适语言模型可使翻译更流畅
+  - 缺点：
+    - 需要双语语料库
+    - 特定错误很难修复
+    - 不太适合单词顺序差异较大的语言对需要好的字典
+- 基于深度网络机器翻译(NMT): 2014-至今
+  - 优点：
+    - 端到端模型（没有特定任务的流程）
+  - 缺点：
+    - 需要双语语料库
+    - 稀有字问题
+
+   文中分别介绍了各个阶段一些代表性软件和优缺点。如Apertium是RBMT开源软件的代表，Moses是SMT开源软件，基于神经网络就非OpenNMT莫属了。
+   本文是机器翻译的入门导读，给了不少参考链接，有兴趣的可以了解一下。
 
 
 
 ## 3.Tips
 
+interface类型定义了一组方法，如果某个对象实现了某个接口的所有方法，则此对象就实现了此接口。
+所以任意的类型都实现了空interface(interface{})，也就是包含0个method的interface。那如何根据变量确定变量类型呢？主要有两种：
+
+- 断言类型变量 value, ok = ele.(T) 或 i.(type) //只能在switch中使用
+- 反射 t := reflect.TypeOf(var) 
+
+再看实现了String方法的接口：
+fmt/print.go
+
+```Go
+// Stringer is implemented by any value that has a String method,
+// which defines the ``native'' format for that value.
+// The String method is used to print values passed as an operand
+// to any format that accepts a string or to an unformatted printer
+// such as Print.
+type Stringer interface {
+	String() string
+}
+```
+String()相当于Java的toString方法，写个简单的例子
+```Go
+package main
+import (
+	"fmt"
+	"reflect"
+)
+
+type Animal interface {
+}
+
+type Dog struct {
+    name string
+    color string
+}
+
+type Cat struct {
+    name string
+    color string
+}
+
+//实现fmt.Stringer相当于Java的toString方法
+func (d Dog) String() string {
+    return "[" + d.name + ": " + d.color + "]"
+}
+
+func main() {
+	dog1 := Dog{"Dog Army", "Brown"}
+	cat1 := Cat{"Cat Bob", "Red"}
+	fmt.Println(dog1)
+	fmt.Println(cat1)
+
+	type List [] Animal
+	animals := make(List, 2)
+	animals[0] = cat1
+	animals[1] = dog1
+
+	for _, animal := range animals{
+		switch value := animal.(type) {
+		case Cat:
+			fmt.Println(value, " is a cat")
+		case Dog:
+			fmt.Println(value, " is a Dog")
+		}
+	}
+
+	if value,ok := animals[0].(Cat);ok {
+		fmt.Println(value, " is a cat")
+	}
+	v := reflect.ValueOf(dog1)
+	fmt.Println("type:", v.Type())
+}
+```
+运行结果：
+```
+[Dog Army: Brown]
+{Cat Bob Red}
+{Cat Bob Red}  is a cat
+[Dog Army: Brown]  is a Dog
+{Cat Bob Red}  is a cat
+type: main.Dog
+```
 
 
 
