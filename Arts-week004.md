@@ -118,7 +118,7 @@ Ian Lance Taylor在Gophercon 2019上介绍了关于向Go添加泛型的意义、
 
 
 ## 3.Tips
-- ** Python deque **:
+- **Python deque** :
 deque遵循先进先出（First-In-First-Out，FIFO）的原则，关键特性是保持队列长度一直不变
 ```Python
 from collections import deque
@@ -134,7 +134,7 @@ print(my_queue)
 #deque([6, 7, 8, 9, 10, 11, 12, 13, 14, 15], maxlen=10)
 
 ```
-- ** Python namedtuple **:
+-   **Python namedtuple** :
 namedtuple() 可以返回一个 tuple，该 tuple 中的每个位置都有固定名称，有点像Scala的Case class
 ```Python
 from collections import namedtuple
