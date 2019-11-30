@@ -71,12 +71,13 @@ PosqgreSQL v12.1已经发布，v12带来了许多改变，作者从DB优化、�
 
 - “自动的”性能提升
   - 自动内联通用表表达式（CTE），支持将 WITH 语句中的查询条件下推到外层SQL中，从而提升 CTE 语句性能。如果希望不这样做（极少情况下如执行计划判断异常等）可以使用“MATERIALIZED”关键词强制先物化。
-  ```sql
+  ```
   WITH w AS MATERIALIZED (
 SELECT * FROM pgbench_accounts
 )
 SELECT * FROM w WHERE aid = 1;
   ```
+
   - 在SERIALIZABLE隔离模式下时允许并行查询
   - 默认情况下启用即时（JIT）编译，v11的杀手级Feature，当时作为可选项引入，v12改为默认。在非常复杂查询可能会变慢，可以在session、transaction级别上进行禁用，或者调整jitting的阀值(jit_*_cost)。
 
