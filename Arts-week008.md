@@ -72,8 +72,11 @@ PosqgreSQL v12.1已经发布，v12带来了许多改变，作者从DB优化、�
 - “自动的”性能提升
   - 自动内联通用表表达式（CTE），支持将 WITH 语句中的查询条件下推到外层SQL中，从而提升 CTE 语句性能。如果希望不这样做（极少情况下如执行计划判断异常等）可以使用“MATERIALIZED”关键词强制先物化。
 >  WITH w AS MATERIALIZED ( 
+
 > SELECT * FROM pgbench_accounts 
+
 > ) 
+
 > SELECT * FROM w WHERE aid = 1; 
 
 
@@ -97,15 +100,25 @@ PosqgreSQL v12.1已经发布，v12带来了许多改变，作者从DB优化、�
 	-  pgbench 新增 \gset 命令支持将SQL结果存入变量
 
 		> \set bid random(1, 1 * :scale) 
+		
     > \set tid random(1, 10 * :scale) 
+    
     > \set delta random(-5000, 5000) 
+    
     > BEGIN; 
+    
     > select aid from pgbench_accounts where abalance = 0 order by aid limit 1 \gset 
+    
     > UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid; 
+    
     > SELECT abalance FROM pgbench_accounts WHERE aid = :aid; 
+    
     > UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid; 
+    
     > UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid; 
+    
     > INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta,  CURRENT_TIMESTAMP); 
+    
     > END; 
 
 	-  允许小数方式输入服务器参数，如允许SET work_mem = ‘1.5GB’ 
@@ -121,15 +134,15 @@ PS.具体可以参考(https://www.postgresql.org/docs/12/release-12.html#id-1.11
 
     go get 下载文件报错可以使用go module镜像解决下载源问题
     
-    ```go
-		//七牛云
-		go env -w GO111MODULE=on
-		go env -w GOPROXY=https://goproxy.cn,direct
-		//or 阿里云
-		go env -w GO111MODULE=on
-		go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
-    ```
-    
+  ```go
+	//七牛云
+	go env -w GO111MODULE=on
+	go env -w GOPROXY=https://goproxy.cn,direct
+	//or 阿里云
+	go env -w GO111MODULE=on
+	go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+  ```
+  
 - **Delve:Golang debug tools** 
 
   - **Install**
