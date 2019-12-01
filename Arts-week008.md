@@ -99,7 +99,7 @@ PosqgreSQL v12.1已经发布，v12带来了许多改变，作者从DB优化、�
 	-  “pg_checksums”实用程序可以启用/禁用脱机集群的页面校验和
 	-  pgbench 新增 \gset 命令支持将SQL结果存入变量
 
-		> \set bid random(1, 1 * :scale) 
+    > \set bid random(1, 1 * :scale) 
 		
     > \set tid random(1, 10 * :scale) 
     
