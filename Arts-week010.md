@@ -208,33 +208,33 @@ writer.constructor === User;          // => false
 ## 3.Tips
 ##### Go Printf
 ```Go
-	fmt.Printf("%t\n", true) //true
-	n := 17
-	fmt.Printf("%T\n", n) //int
-	fmt.Printf("%v\n", n) //17
-	fmt.Printf("%b\n", n) //10001
-	fmt.Printf("%d\n", n) //17
-	fmt.Printf("%x\n", n) //11
-	fmt.Printf("%#x\n", n) //0x11
-	fmt.Printf("%#v\n", n) //17
-	fmt.Printf("%05d\n", n) //00017
+  fmt.Printf("%t\n", true) //true
+  n := 17
+  fmt.Printf("%T\n", n) //int
+  fmt.Printf("%v\n", n) //17
+  fmt.Printf("%b\n", n) //10001
+  fmt.Printf("%d\n", n) //17
+  fmt.Printf("%x\n", n) //11
+  fmt.Printf("%#x\n", n) //0x11
+  fmt.Printf("%#v\n", n) //17
+  fmt.Printf("%05d\n", n) //00017
 
-	s := "test,测试"
-	fmt.Printf("%s\n", s) //test,测试
-	fmt.Printf("%v\n", s) //test,测试
-	fmt.Printf("%#v\n", s) //"test,测试"
-	fmt.Printf("%010s\n", s) //000test,测试
+  s := "test,测试"
+  fmt.Printf("%s\n", s) //test,测试
+  fmt.Printf("%v\n", s) //test,测试
+  fmt.Printf("%#v\n", s) //"test,测试"
+  fmt.Printf("%010s\n", s) //000test,测试
 
-	st  := struct {
-		name string
-		age int
-	}{"张三",10}
-	fmt.Printf("%v\n", st) //{张三 10}
-	fmt.Printf("%+v\n", st) //{name:张三 age:10}
-	fmt.Printf("%#v\n", st) //struct { name string; age int }{name:"张三", age:10}
+  st := struct {
+	name string
+	age int
+  }{"张三",10}
+  fmt.Printf("%v\n", st) //{张三 10}
+  fmt.Printf("%+v\n", st) //{name:张三 age:10}
+  fmt.Printf("%#v\n", st) //struct { name string; age int }{name:"张三", age:10}
 
-	fmt.Printf("%p\n", &st) //例如：0xc00009a000
-	fmt.Printf("%#p\n", &st) //例如：c00009a000
+  fmt.Printf("%p\n", &st) //例如：0xc00009a000
+  fmt.Printf("%#p\n", &st) //例如：c00009a000
 ```
 
 
