@@ -2,7 +2,9 @@
 
 ## 1.Algorithm
 
-95. [不同的二叉搜索树 II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/)给定一个整数 n，生成所有由 1 ... n 为节点所组成的二叉搜索树。
+95. [不同的二叉搜索树 II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/)
+
+给定一个整数 n，生成所有由 1 ... n 为节点所组成的二叉搜索树。
 
 示例:
 
@@ -67,6 +69,7 @@ func createTrees(start int, end int) []*TreeNode {
 ## 2.Review
 
 [The Complete Guide to JavaScript Classes](https://dmitripavlutin.com/javascript-classes-complete-guide)
+
 本文介绍了JavaScript的类语法，并简单对比了类语法和原型继承语法。类语法对熟悉Java等面向对象语言来说非常熟悉，JavaScript在ES2015中引入类语法，包括了构造器、字段、类字段、私有、公有、静态属性和方法以及继承等。文中给了大量例子。
 
 ##### 类定义
@@ -203,7 +206,7 @@ writer.constructor === User;          // => false
 
 
 ## 3.Tips
-##### 使用go fmt example
+##### Go Printf
 ```Go
 	fmt.Printf("%t\n", true) //true
 	n := 17
