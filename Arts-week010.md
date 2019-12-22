@@ -2,7 +2,9 @@
 
 ## 1.Algorithm
 
-95. [不同的二叉搜索树 II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/)给定一个整数 n，生成所有由 1 ... n 为节点所组成的二叉搜索树。
+95. [不同的二叉搜索树 II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/)
+
+给定一个整数 n，生成所有由 1 ... n 为节点所组成的二叉搜索树。
 
 示例:
 
@@ -67,6 +69,7 @@ func createTrees(start int, end int) []*TreeNode {
 ## 2.Review
 
 [The Complete Guide to JavaScript Classes](https://dmitripavlutin.com/javascript-classes-complete-guide)
+
 本文介绍了JavaScript的类语法，并简单对比了类语法和原型继承语法。类语法对熟悉Java等面向对象语言来说非常熟悉，JavaScript在ES2015中引入类语法，包括了构造器、字段、类字段、私有、公有、静态属性和方法以及继承等。文中给了大量例子。
 
 ##### 类定义
@@ -203,35 +206,35 @@ writer.constructor === User;          // => false
 
 
 ## 3.Tips
-##### 使用go fmt example
+##### Go Printf
 ```Go
-	fmt.Printf("%t\n", true) //true
-	n := 17
-	fmt.Printf("%T\n", n) //int
-	fmt.Printf("%v\n", n) //17
-	fmt.Printf("%b\n", n) //10001
-	fmt.Printf("%d\n", n) //17
-	fmt.Printf("%x\n", n) //11
-	fmt.Printf("%#x\n", n) //0x11
-	fmt.Printf("%#v\n", n) //17
-	fmt.Printf("%05d\n", n) //00017
+  fmt.Printf("%t\n", true) //true
+  n := 17
+  fmt.Printf("%T\n", n) //int
+  fmt.Printf("%v\n", n) //17
+  fmt.Printf("%b\n", n) //10001
+  fmt.Printf("%d\n", n) //17
+  fmt.Printf("%x\n", n) //11
+  fmt.Printf("%#x\n", n) //0x11
+  fmt.Printf("%#v\n", n) //17
+  fmt.Printf("%05d\n", n) //00017
 
-	s := "test,测试"
-	fmt.Printf("%s\n", s) //test,测试
-	fmt.Printf("%v\n", s) //test,测试
-	fmt.Printf("%#v\n", s) //"test,测试"
-	fmt.Printf("%010s\n", s) //000test,测试
+  s := "test,测试"
+  fmt.Printf("%s\n", s) //test,测试
+  fmt.Printf("%v\n", s) //test,测试
+  fmt.Printf("%#v\n", s) //"test,测试"
+  fmt.Printf("%010s\n", s) //000test,测试
 
-	st  := struct {
-		name string
-		age int
-	}{"张三",10}
-	fmt.Printf("%v\n", st) //{张三 10}
-	fmt.Printf("%+v\n", st) //{name:张三 age:10}
-	fmt.Printf("%#v\n", st) //struct { name string; age int }{name:"张三", age:10}
+  st := struct {
+	name string
+	age int
+  }{"张三",10}
+  fmt.Printf("%v\n", st) //{张三 10}
+  fmt.Printf("%+v\n", st) //{name:张三 age:10}
+  fmt.Printf("%#v\n", st) //struct { name string; age int }{name:"张三", age:10}
 
-	fmt.Printf("%p\n", &st) //例如：0xc00009a000
-	fmt.Printf("%#p\n", &st) //例如：c00009a000
+  fmt.Printf("%p\n", &st) //例如：0xc00009a000
+  fmt.Printf("%#p\n", &st) //例如：c00009a000
 ```
 
 
