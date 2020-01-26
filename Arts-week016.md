@@ -344,6 +344,7 @@ uvicorn main:app --reload
 - 交互式的API文档 ` http://127.0.0.1:8000/docs.`
   ![swaggerui](https://fastapi.tiangolo.com/img/index/index-01-swagger-ui-simple.png)
 
-  
 
 
+- 性能测试对比
+https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7
